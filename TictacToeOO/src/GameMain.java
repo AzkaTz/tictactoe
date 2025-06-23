@@ -46,6 +46,12 @@ public class GameMain extends JPanel {
                 } else {        // game over
                     newGame();  // restart the game
                 }
+                if (currentState == State.PLAYING) {
+                    SoundEffect.EAT_FOOD.play();
+                } else {
+                    SoundEffect.DIE.play();
+                }
+
                 // Refresh the drawing canvas
                 repaint();  // Callback paintComponent().
             }
